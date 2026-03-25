@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import Parallax from "../shared/parallax";
+import Parallax from "../../shared/parallax";
 
 export default function HeroImageWrapper() {
   const mouseX = useMotionValue(100);

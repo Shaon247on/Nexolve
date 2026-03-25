@@ -5,7 +5,7 @@ import { useEffect, useState, type CSSProperties } from "react";
 import { motion, animate } from "framer-motion";
 import { SITE_EMAIL, HERO_SERVICES, SITE_TAGLINE } from "@/lib/constants";
 import HeroImageWrapper from "./HeroImageWrapper";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 // ─────────────────────────────────────────
 // Animated counter

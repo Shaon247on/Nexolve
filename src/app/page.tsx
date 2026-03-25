@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 import LoadingReveal from "@/components/element/loading-reveal";
 import Navbar from "@/components/shared/Navbar";
-import HeroSection from "@/components/sections/HeroSection";
+import HeroSection from "@/components/sections/landing/HeroSection";
+import { ScrollAnimatedText } from "@/components/shared/SectionTitle";
+import AboutSection from "@/components/sections/landing/AboutSection";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} — Premium B2B Design & Strategy`,
@@ -18,14 +20,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main-content">
         <HeroSection />
-        <section
-          className="min-h-screen bg-white flex items-center justify-center"
-          aria-label="Coming soon"
-        >
-          <p className="font-body text-slate-300 text-sm tracking-widest uppercase">
-            More sections — coming soon
-          </p>
-        </section>
+        <AboutSection/>
       </main>
     </>
   );
