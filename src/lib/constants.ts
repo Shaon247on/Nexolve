@@ -27,7 +27,10 @@ export const NAV_LINKS = [
         {
           heading: "Design",
           items: [
-            { label: "UI/UX Design", href: "/services/ui-ux" },
+            {
+              label: "UI/UX Design",
+              href: "/services/ui-ux",
+            },
             { label: "Motion Graphics", href: "/services/motion" },
             { label: "Visual Identity", href: "/services/identity" },
           ],
@@ -63,7 +66,14 @@ export const NAV_LINKS = [
         {
           heading: "Company",
           items: [
-            { label: "Our Story", href: "/about/story" },
+            {
+              label: "Our Story",
+              href: "/about/story",
+              children: [
+                { label: "Mission", href: "/about/story/mission" },
+                { label: "Vision", href: "/about/story/vision" },
+              ],
+            },
             { label: "The Team", href: "/about/team" },
             { label: "Culture", href: "/about/culture" },
           ],

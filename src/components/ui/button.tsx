@@ -18,8 +18,8 @@ const buttonVariants = cva(
     "focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50",
     "active:not-aria-[haspopup]:translate-y-px",
     "disabled:pointer-events-none disabled:opacity-50",
-    "aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20",
-    "dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+    "aria-invalid:border-blue-500 aria-invalid:ring-3 aria-invalid:ring-blue-500/20",
+    "dark:aria-invalid:border-blue/50 dark:aria-invalid:ring-blue-500/40",
     "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   ],
   {
@@ -74,10 +74,10 @@ const buttonVariants = cva(
 
         // ── Destructive: glow pulse + slight scale
         destructive: [
-          "bg-destructive/10 text-destructive",
-          "focus-visible:border-destructive/40 focus-visible:ring-destructive/20",
-          "dark:bg-destructive/20 dark:focus-visible:ring-destructive/40",
-          "hover:bg-destructive/20 dark:hover:bg-destructive/30",
+          "bg-blue-500/10 text-blue-500",
+          "focus-visible:border-blue-500/40 focus-visible:ring-blue-500/20",
+          "dark:bg-blue-500/20 dark:focus-visible:ring-blue-500/40",
+          "hover:bg-blue-500/20 dark:hover:bg-blue-500/30",
           "hover:shadow-[0_0_0_3px_rgba(239,68,68,0.18)]",
           "hover:scale-[1.025]",
           "active:scale-100",

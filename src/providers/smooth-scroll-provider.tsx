@@ -1,5 +1,6 @@
 "use client";
 
+import ScrollBlur from "@/components/shared/ScrollBlur";
 import { ReactLenis } from "lenis/react";
 import type { ReactNode } from "react";
 

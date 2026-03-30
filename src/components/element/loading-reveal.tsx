@@ -35,7 +35,7 @@ export default function LoadingReveal() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-9999 flex items-center justify-center pointer-events-none"
+          className="fixed inset-0 z-99 flex items-center justify-center pointer-events-none"
           exit={{ opacity: 1 }}
         >
           {/* Loading content */}

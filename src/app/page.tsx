@@ -4,8 +4,14 @@ import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 import LoadingReveal from "@/components/element/loading-reveal";
 import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/sections/landing/HeroSection";
-import { ScrollAnimatedText } from "@/components/shared/SectionTitle";
 import AboutSection from "@/components/sections/landing/AboutSection";
+import SolutionsSection from "@/components/sections/landing/ServicesSection";
+import SelectedWorksSection from "@/components/sections/landing/SelectedWorkSection";
+import TestimonialsSection from "@/components/sections/landing/TestimonialsSection";
+import LogoLooper from "@/components/shared/LogoLooper";
+import WhyChooseUs from "@/components/sections/landing/WhyChooseUs";
+import LetsCreate from "@/components/sections/landing/LetsCreate";
+import FAQ from "@/components/sections/landing/FAQ";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} — Premium B2B Design & Strategy`,
@@ -16,11 +22,17 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <LoadingReveal />
-      <Navbar />
+      
       <main id="main-content">
         <HeroSection />
-        <AboutSection/>
+        <AboutSection />
+        <LogoLooper/>
+        <SolutionsSection />
+        <SelectedWorksSection />
+        <TestimonialsSection />
+        <LetsCreate/>
+        <WhyChooseUs/>
+        <FAQ/>
       </main>
     </>
   );
