@@ -152,7 +152,6 @@ export default function LetsCreate() {
                 <h2
                   className="text-white leading-[0.9] tracking-tight"
                   style={{
-                    fontFamily: "var(--font-syne)",
                     fontSize: "clamp(2.8rem, 5.5vw, 5rem)",
                     fontWeight: 700,
                   }}

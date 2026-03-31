@@ -1,8 +1,6 @@
 // "use client"
 import type { Metadata } from "next";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
-import LoadingReveal from "@/components/element/loading-reveal";
-import Navbar from "@/components/shared/Navbar";
 import HeroSection from "@/components/sections/landing/HeroSection";
 import AboutSection from "@/components/sections/landing/AboutSection";
 import SolutionsSection from "@/components/sections/landing/ServicesSection";
@@ -12,6 +10,7 @@ import LogoLooper from "@/components/shared/LogoLooper";
 import WhyChooseUs from "@/components/sections/landing/WhyChooseUs";
 import LetsCreate from "@/components/sections/landing/LetsCreate";
 import FAQ from "@/components/sections/landing/FAQ";
+import ProcessSection from "@/components/sections/landing/HowWeWork";
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} — Premium B2B Design & Strategy`,
@@ -26,6 +25,7 @@ export default function HomePage() {
       <main id="main-content">
         <HeroSection />
         <AboutSection />
+        <ProcessSection/>
         <LogoLooper/>
         <SolutionsSection />
         <SelectedWorksSection />

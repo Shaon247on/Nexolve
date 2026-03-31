@@ -31,7 +31,7 @@ export default function TitleSection({
       style={{ opacity }}
     >
       <span
-        className={`whitespace-nowrap  leading-none font-black uppercase tracking-tighter text-neutral-900 ${className}`}
+        className={`whitespace-nowrap  leading-none font-black uppercase tracking-tighter ${className} text-neutral-900 `}
       >
         {title}
       </span>

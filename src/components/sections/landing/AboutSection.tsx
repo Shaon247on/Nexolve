@@ -19,6 +19,7 @@ import type { MotionValue } from "framer-motion";
 import { ScrollAnimatedText } from "@/components/shared/ScrollAnimatedText";
 import TitleSection from "@/components/element/TitleSection";
 import { Button } from "@/components/ui/button";
+import CountUp from "@/components/element/CountUp";
 
 function useSmoothTransform(
   value: MotionValue<number>,
@@ -82,7 +83,7 @@ function RevealText({
       {words.map((word, i) => (
         <motion.span
           key={i}
-          className="inline-block mr-[0.28em]"
+          className="inline-block mr-[0.28em] text-lg"
           initial={{ opacity: 0, y: 18 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{
@@ -163,9 +164,13 @@ export default function AboutSection() {
       className="relative w-full overflow-hidden py-24 md:py-32 lg:py-40"
     >
       {/* ── Decorative background text ── */}
-      <TitleSection title="About us" scrollYProgress={scrollYProgress} />
+      <TitleSection
+        topClassName="top-5 lg:top-0"
+        title="About us"
+        scrollYProgress={scrollYProgress}
+      />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 lg:px-16">
+      <div className="relative mx-auto max-w-7xl">
         {/* ══════════════════════════════════════
             ROW 1 — Label + Expanding line + Tagline
         ══════════════════════════════════════ */}
@@ -186,7 +191,7 @@ export default function AboutSection() {
           <div className="lg:col-span-5 flex flex-col gap-5">
             {/* Main tall image */}
             <Parallax
-              className="relative w-full overflow-hidden rounded-2xl bg-neutral-200"
+              className="relative w-full overflow-hidden rounded-2xl bg-neutral-200 hidden lg:block"
               contentClassName="w-full h-full"
               effect="translate"
               axis="y"
@@ -195,18 +200,18 @@ export default function AboutSection() {
               style={{ aspectRatio: "4/5" }}
             >
               <motion.div
-                className="relative w-full h-full"
+                className="relative w-full h-full "
                 style={{ y: rightImgY }}
               >
                 <Image
-                  src="https://i.pinimg.com/736x/6d/54/75/6d54759dc968dcb9c961481b6253fd7e.jpg"
+                  src="https://i.pinimg.com/736x/7a/3c/70/7a3c70d950bf959bcc3278c66e0a52f7.jpg"
                   alt="Our studio"
                   fill
                   className="object-cover"
                   priority
                 />
                 {/* Warm tint overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/30 via-transparent to-transparent" />
 
                 {/* Floating badge over image */}
                 <div className="absolute bottom-5 left-5">
@@ -221,34 +226,34 @@ export default function AboutSection() {
               style={{ y: leftImgY, aspectRatio: "16/9" }}
             >
               <Image
-                src="https://i.pinimg.com/1200x/2f/06/60/2f066025445ff8455d9bda820e7c28c9.jpg"
+                src="https://i.pinimg.com/736x/88/76/c3/8876c3d6cc492465a91cea742febdc9e.jpg"
                 alt="Our process"
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-600/10 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-br from-orange-600/10 via-transparent to-transparent" />
             </motion.div>
           </div>
 
           {/* Right column: story text + stats */}
           <div className="lg:col-span-7 lg:pl-10 flex flex-col justify-between h-full pt-4 lg:pt-10">
             {/* Story paragraphs */}
-            <div className="space-y-8 mb-16">
+            <div className="space-y-8">
               <RevealText
                 text="We are a multidisciplinary creative studio rooted in the belief that great design is felt before it is seen. Founded in 2012, we have spent over a decade partnering with ambitious brands to shape how the world experiences them."
-                className="text-base md:text-lg text-neutral-600 leading-relaxed max-w-xl"
+                className="text-base md:text-2xl text-neutral-600 leading-7 font-semibold max-w-xl"
                 delay={0.1}
               />
 
               <RevealText
                 text="Our practice spans identity, digital product, motion, and strategy — woven together by a shared obsession with quality and a restless curiosity about what is possible when craft meets technology."
-                className="text-base md:text-lg text-neutral-500 leading-relaxed max-w-xl"
+                className="text-base md:text-2xl text-neutral-600 leading-7 font-semibold max-w-xl"
                 delay={0.2}
               />
             </div>
 
             {/* Values list */}
-            <div className="space-y-0 mb-16 border-t border-neutral-200">
+            <div className="space-y-0 flex-1 mt-10 xl:mt-20 mb-16 border-t border-neutral-200">
               {[
                 {
                   label: "Strategy first",
@@ -273,7 +278,7 @@ export default function AboutSection() {
                     delay: i * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="group flex items-center justify-between py-5 border-b border-neutral-200 cursor-default"
+                  className="group flex items-center justify-between py-3 xl:py-5 border-b border-neutral-200 cursor-default"
                 >
                   <div className="flex items-center gap-4">
                     <motion.span className="text-xs font-mono text-neutral-300 group-hover:text-orange-500 transition-colors duration-300">
@@ -283,7 +288,7 @@ export default function AboutSection() {
                       {item.label}
                     </span>
                   </div>
-                  <span className="text-xs text-neutral-400 max-w-[200px] text-right leading-snug hidden sm:block">
+                  <span className="text-xs text-neutral-400 max-w-50 text-right leading-snug hidden sm:block">
                     {item.desc}
                   </span>
                 </motion.div>
@@ -317,92 +322,55 @@ export default function AboutSection() {
         {/* ══════════════════════════════════════
             ROW 3 — Stats bar
         ══════════════════════════════════════ */}
-        <motion.div
-          initial={{ opacity: 0, y: 32 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-40px" }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative rounded-2xl bg-neutral-950 px-8 md:px-12 py-10 md:py-12 overflow-hidden"
-        >
-          {/* Subtle orange glow */}
-          <div className="pointer-events-none absolute -top-20 -right-20 w-72 h-72 rounded-full bg-orange-600/10 blur-3xl" />
-
-          <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
-            {[
-              { value: "38+", label: "Projects delivered" },
-              { value: "12", label: "Years of craft" },
-              { value: "94%", label: "Client retention" },
-              { value: "6", label: "Industry awards" },
-            ].map((s, i) => (
-              <motion.div
-                key={s.label}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.7,
-                  delay: i * 0.08,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-                className="flex flex-col gap-1.5"
-              >
-                <span className="text-3xl md:text-4xl font-black text-white tracking-tight">
-                  {s.value}
-                </span>
-                <span className="text-xs text-neutral-500 tracking-widest uppercase">
-                  {s.label}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* ══════════════════════════════════════
-            ROW 4 — Wide cinematic image with parallax
-        ══════════════════════════════════════ */}
-        <div className="mt-10 md:mt-12">
-          <Parallax
-            className="relative w-full overflow-hidden rounded-2xl bg-neutral-200"
-            contentClassName="w-full h-full"
-            effect="translate"
-            axis="y"
-            range={[-30, 30]}
-            smooth
-            style={{ aspectRatio: "21/9" }}
-          >
-            <div
-              className="relative w-full h-full"
-              style={{ height: "clamp(220px, 30vw, 500px)" }}
-            >
-              <Image
-                src="https://i.pinimg.com/736x/1d/9c/48/1d9c4826925892f6829cc3945b9f8b41.jpg"
-                alt="Studio environment"
-                fill
-                className="object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent" />
-
-              {/* Overlay text */}
-              <div className="absolute inset-0 flex items-end p-8 md:p-12">
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.8,
-                    ease: [0.22, 1, 0.36, 1],
-                    delay: 0.2,
-                  }}
-                  className="text-white/80 text-sm md:text-base max-w-xs leading-relaxed font-light"
-                >
-                  &#34;Design is not just what it looks like. Design is how it
-                  works.&#34;
-                </motion.p>
-              </div>
-            </div>
-          </Parallax>
-        </div>
       </div>
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        className="relative bg-neutral-950 px-8 md:px-12 py-10 md:py-12 overflow-hidden"
+      >
+        {/* Subtle orange glow */}
+        <div className="pointer-events-none absolute -top-20 -right-20 w-72 h-72 rounded-full bg-orange-600/10 blur-3xl" />
+
+        <div className="relative grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+          {[
+            { value: 38, suffix: "+", label: "Projects delivered" },
+            { value: 12, suffix: "", label: "Years of craft" },
+            { value: 94, suffix: "%", label: "Client retention" },
+            { value: 6, suffix: "", label: "Industry awards" },
+          ].map((s, i) => (
+            <motion.div
+              key={s.label}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                delay: i * 0.08,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="flex flex-col items-center gap-1.5"
+            >
+              <div className="text-3xl md:text-4xl font-black tracking-tight text-white">
+                <CountUp
+                  from={0}
+                  to={s.value}
+                  separator=","
+                  direction="up"
+                  duration={1.4}
+                  className="inline"
+                />
+                <span>{s.suffix}</span>
+              </div>
+
+              <span className="text-xs text-neutral-500 tracking-widest uppercase">
+                {s.label}
+              </span>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }

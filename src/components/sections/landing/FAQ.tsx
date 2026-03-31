@@ -136,7 +136,7 @@ export default function FAQ() {
               </p>
 
               <div className="flex items-center gap-2 mt-3">
-                <Button variant={"destructive"} className=" px-8 py-6" >
+                <Button variant={"default"} className=" px-8 py-6" >
                   <Link href="#contact" className="flex items-center gap-1 justify-between">
                     Contact Us
                     <ArrowRight />

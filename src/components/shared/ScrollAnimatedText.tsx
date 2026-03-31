@@ -144,7 +144,7 @@ export function ScrollAnimatedText({
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "start 40%"],
+    offset: ["start 78%", "start 20%"],
   });
 
   const headlineY = useSmoothTransform(

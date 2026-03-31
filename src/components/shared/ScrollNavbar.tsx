@@ -6,11 +6,14 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
 import MobileMenu from "./MobileMenu";
+import { usePathname } from "next/navigation";
 
 export default function ScrollNavbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [activeNested, setActiveNested] = useState<string | null>(null);
+  const pathname = usePathname();
+  const isHomeRoute = pathname === "/";
 
   useEffect(() => {
     const handler = () => {
@@ -88,7 +91,12 @@ export default function ScrollNavbar() {
                       />
                     </svg>
                   </div>
-                  <span className="font-body font-semibold text-white text-base tracking-wide">
+                  <span
+                    className={cn(
+                      "font-body font-semibold text-base tracking-wide",
+                      isHomeRoute ? "text-white" : "text-black",
+                    )}
+                  >
                     {SITE_NAME}
                   </span>
                 </Link>
@@ -123,8 +131,12 @@ export default function ScrollNavbar() {
                         className={cn(
                           "flex items-center gap-1 px-5 py-2 rounded-full text-sm font-body font-medium transition-all duration-200",
                           activeDropdown === link.label
-                            ? "bg-white/20 text-white"
-                            : "text-white hover:bg-white/10",
+                            ? isHomeRoute
+                              ? "bg-white/20 text-white"
+                              : "bg-black/5 text-black"
+                            : isHomeRoute
+                              ? "text-white hover:bg-white/10"
+                              : "text-black hover:bg-black/5",
                         )}
                       >
                         {link.label}
@@ -152,7 +164,16 @@ export default function ScrollNavbar() {
                     ) : (
                       <Link
                         href={link.href}
-                        className="flex items-center gap-1 px-5 py-2 rounded-full text-sm font-body font-medium text-white hover:bg-white/10 transition-all duration-200"
+                        className={cn(
+                          "flex items-center gap-1 px-5 py-2 rounded-full text-sm font-body font-medium transition-all duration-200",
+                          activeDropdown === link.label
+                            ? isHomeRoute
+                              ? "bg-white/20 text-white"
+                              : "bg-black/5 text-black"
+                            : isHomeRoute
+                              ? "text-white hover:bg-white/10"
+                              : "text-black hover:bg-black/5",
+                        )}
                       >
                         {link.label}
                       </Link>

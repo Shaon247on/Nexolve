@@ -69,10 +69,6 @@ export const NAV_LINKS = [
             {
               label: "Our Story",
               href: "/about/story",
-              children: [
-                { label: "Mission", href: "/about/story/mission" },
-                { label: "Vision", href: "/about/story/vision" },
-              ],
             },
             { label: "The Team", href: "/about/team" },
             { label: "Culture", href: "/about/culture" },
