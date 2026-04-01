@@ -19,7 +19,7 @@ const SOCIALS = [
 // "panel":  show everything — no clip
 const containerVariants = {
   button: {
-    clipPath: "inset(0% 0% 92% 75% round 999px)",
+    clipPath: "inset(0% 0% 93% 75% round 999px)",
     transition: {
       duration: 0.52,
       ease: [0.76, 0, 0.24, 1] as [number, number, number, number],
@@ -171,7 +171,7 @@ export default function MobileMenu({ scrolled }: MobileMenuProps) {
               key="trigger-btn"
               onClick={handleOpen}
               aria-label="Open menu"
-              className="absolute top-0 py-6.5 px-8 right-0 rounded-full w-35 flex items-center gap-2 text-sm font-body font-medium text-[#1a1a1a]"
+              className="absolute top-0 py-4 px-8 right-0 rounded-full w-35 flex items-center gap-2 text-sm font-body font-medium text-[#1a1a1a]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1, transition: { duration: 0.1, delay: 0.5 } }}
               exit={{ opacity: 0, transition: { duration: 0.1 } }}

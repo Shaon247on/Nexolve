@@ -1,3 +1,4 @@
+import ParallaxGallery from "@/components/sections/about/story/ParallaxGallery";
 import ServicesSection from "@/components/sections/about/story/ServicesSection";
 import StackedProcessSection from "@/components/sections/about/story/StackedProcessSection";
 import DynamicParallaxImage from "@/components/sections/landing/DynamicParallaxImage";
@@ -33,6 +34,7 @@ export default function Page() {
       </div>
       <ServicesSection />
       <StackedProcessSection />
+      <ParallaxGallery/>
     </section>
   );
 }

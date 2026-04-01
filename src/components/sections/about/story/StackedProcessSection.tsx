@@ -72,7 +72,7 @@ const processSteps = [
 
 const CARD_TOP_OFFSET = 30; // px from top for first card
 const CARD_STACK_GAP = 20; // px each subsequent card shifts down
-const CARD_HEIGHT = 350; // px — must match the h-[600px] below
+const CARD_HEIGHT = 390; // px — must match the h-[600px] below
 
 export default function StackedProcess() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,7 +95,8 @@ export default function StackedProcess() {
         <TitleSection
         title="Our Process"
         scrollYProgress={scrollYProgress}
-        className="text-[13rem]"
+        className="text-[4rem] md:text-[7rem] lg:text-[10rem] xl:text-[13rem]"
+        topClassName="top-2"
         opacityRange={[0, 0.4]}
         />
       <div className="max-w-420 mx-auto">
