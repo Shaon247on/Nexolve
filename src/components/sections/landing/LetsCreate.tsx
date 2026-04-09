@@ -119,7 +119,7 @@ export default function LetsCreate() {
                 className="text-white text-sm font-medium tracking-wide"
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
-                Orisa
+                Nexolve
               </span>
             </div>
 
@@ -195,7 +195,7 @@ export default function LetsCreate() {
                 style={{ fontFamily: "var(--font-dm-sans)" }}
               >
                 [ A creative studio crafting bold, user-focused digital
-                experiences. At Orisa, we blend strategy, design, and
+                experiences. At Nexolve, we blend strategy, design, and
                 innovation to help brands stand out and grow. ]
               </p>
             </div>

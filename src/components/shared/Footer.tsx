@@ -60,7 +60,7 @@ export default function Footer() {
                   className="text-white text-sm font-medium tracking-wide"
                   style={{ fontFamily: "var(--font-dm-sans)" }}
                 >
-                  Orisa
+                  Nexolve
                 </span>
               </div>
 
@@ -91,7 +91,7 @@ export default function Footer() {
               </div>
 
               <a
-                href="mailto:hello@orisa.com"
+                href="mailto:hello@Nexolve.com"
                 className="font-medium transition-opacity duration-200 hover:opacity-70"
                 style={{
                   fontFamily: "var(--font-syne)",
@@ -103,7 +103,7 @@ export default function Footer() {
                   paddingBottom: "2px",
                 }}
               >
-                hello@orisa.com
+                hello@Nexolve.com
               </a>
 
               {/* Social pills */}
@@ -228,7 +228,7 @@ export default function Footer() {
                 color: "rgba(255,255,255,0.25)",
               }}
             >
-              Orisa © {year}
+              Nexolve © {year}
             </span>
 
             {/* Services */}

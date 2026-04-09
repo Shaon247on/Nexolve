@@ -60,13 +60,13 @@ const WhyChooseUs = () => {
               <div className="relative w-full h-full">
                 <Image
                   src="https://i.pinimg.com/736x/4f/15/47/4f1547e660e0f19c2c048c890cec37d8.jpg"
-                  alt="Orisa brand lifestyle"
+                  alt="Nexolve brand lifestyle"
                   fill
                   className="object-cover"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
                   <span className="text-sm font-medium text-gray-900">
-                    orisa
+                    Nexolve
                   </span>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const WhyChooseUs = () => {
             {/* Header Text */}
             <div className="space-y-4 mb-12">
               <ScrollAnimatedText
-                title="Orisa™ goes beyond aesthetics—bringing clarity through motion,
+                title="Nexolve goes beyond aesthetics—bringing clarity through motion,
                 flexible structure, and practical tools that help you move faster
                 without defining your identity."
                 className="text-base tracking-normal"
