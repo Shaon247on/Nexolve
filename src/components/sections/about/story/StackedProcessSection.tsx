@@ -226,15 +226,6 @@ function Card({
                 {step.description}
               </p>
             </div>
-
-            <div className="flex items-center justify-end mt-12">
-              <button className="group flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-black">
-                Explore Detail
-                <div className="w-6 h-6 rounded-full border border-black flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all">
-                  <ArrowUpRight className="w-3 h-3" />
-                </div>
-              </button>
-            </div>
           </div>
         </motion.div>
       </div>

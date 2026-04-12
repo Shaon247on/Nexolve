@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { NAV_LINKS, SITE_NAME } from "@/lib/constants";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function ScrollNavbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -47,7 +48,7 @@ export default function ScrollNavbar() {
                   className="flex items-center gap-2 group"
                   aria-label={`${SITE_NAME} home`}
                 >
-                  <div className="relative w-7 h-7shrink-0">
+                  {/* <div className="relative w-7 h-7shrink-0">
                     <svg
                       viewBox="0 0 28 28"
                       fill="none"
@@ -90,6 +91,14 @@ export default function ScrollNavbar() {
                         fillOpacity="0.3"
                       />
                     </svg>
+                  </div> */}
+                  <div className="relative w-7 h-7 shrink-0">
+                    <Image
+                      src="/fav-icon.PNG"
+                      alt="logo icon"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <span
                     className={cn(

@@ -72,7 +72,7 @@ export default function ServicesSection() {
       ref={containerRef}
       className="relative w-full min-h-screen bg-white py-24 px-6 md:px-12 lg:px-20"
     >
-      <TitleSection title="Our Experties" scrollYProgress={scrollYProgress} />
+      <TitleSection title="Our Experties" className="text-6xl md:text-8xl lg:text-[128px] xl:text-[200px]" scrollYProgress={scrollYProgress} />
       <div className="max-w-420 mx-auto grid grid-cols-1 lg:grid-cols-[1fr_2px_1fr] gap-12 lg:gap-0 mt-30">
         {/* LEFT COLUMN: Sticky Context */}
         <div className="lg:sticky lg:top-32 h-fit space-y-6 lg:pr-20">

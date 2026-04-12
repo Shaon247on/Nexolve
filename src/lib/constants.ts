@@ -1,6 +1,6 @@
-export const SITE_NAME = "Nexus";
+export const SITE_NAME = "Nexolve";
 export const SITE_TAGLINE = "B2B Strategy & Design";
-export const SITE_EMAIL = "hello@nexus.studio";
+export const SITE_EMAIL = "hello@nexolve.studio";
 export const SITE_DESCRIPTION =
   "We partner with ambitious brands to create digital experiences that drive growth, command attention, and deliver measurable results.";
 
@@ -71,14 +71,12 @@ export const NAV_LINKS = [
               href: "/about/story",
             },
             { label: "The Team", href: "/about/team" },
-            { label: "Culture", href: "/about/culture" },
           ],
         },
         {
           heading: "More",
           items: [
             { label: "Careers", href: "/about/careers" },
-            { label: "Press", href: "/about/press" },
             { label: "FAQ", href: "/about/faq" },
           ],
         },

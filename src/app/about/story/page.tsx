@@ -1,7 +1,9 @@
-import ParallaxGallery from "@/components/sections/about/story/ParallaxGallery";
+
 import ServicesSection from "@/components/sections/about/story/ServicesSection";
 import StackedProcessSection from "@/components/sections/about/story/StackedProcessSection";
+import TechStack from "@/components/sections/about/story/TechStack";
 import DynamicParallaxImage from "@/components/sections/landing/DynamicParallaxImage";
+import FAQ from "@/components/sections/landing/FAQ";
 
 export default function Page() {
   return (
@@ -34,7 +36,8 @@ export default function Page() {
       </div>
       <ServicesSection />
       <StackedProcessSection />
-      <ParallaxGallery/>
+      <TechStack/>
+      <FAQ/>
     </section>
   );
 }
