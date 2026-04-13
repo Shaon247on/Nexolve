@@ -59,10 +59,10 @@ const WhyChooseUs = () => {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="https://i.pinimg.com/736x/4f/15/47/4f1547e660e0f19c2c048c890cec37d8.jpg"
+                  src="/the_logo.jpg"
                   alt="Nexolve brand lifestyle"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
                   <span className="text-sm font-medium text-gray-900">
@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="https://i.pinimg.com/736x/c8/3c/11/c83c1144a31c89a3e66ec0fe77d46a1c.jpg"
+                  src="https://images.pexels.com/photos/11035468/pexels-photo-11035468.jpeg"
                   alt="Modern design concept"
                   fill
                   className="object-cover"

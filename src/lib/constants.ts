@@ -53,6 +53,11 @@ export const NAV_LINKS = [
     hasDropdown: false,
   },
   {
+    label: "Projects",
+    href: "/projects",
+    hasDropdown: false,
+  },
+  {
     label: "Blogs",
     href: "/blogs",
     hasDropdown: false,
@@ -76,17 +81,12 @@ export const NAV_LINKS = [
         {
           heading: "More",
           items: [
-            { label: "Careers", href: "/about/careers" },
             { label: "FAQ", href: "/about/faq" },
+            { label: "Contact Us", href: "/contact" },
           ],
         },
       ],
     },
-  },
-  {
-    label: "Contact",
-    href: "/contact",
-    hasDropdown: false,
   },
 ];
 

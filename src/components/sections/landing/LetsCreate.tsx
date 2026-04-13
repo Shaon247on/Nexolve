@@ -2,9 +2,10 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import Image from "next/image";
 
 const IMAGE_URL =
-  "https://i.pinimg.com/736x/29/12/0c/29120cb3ab5f14f392dd6cedd2c50e55.jpg";
+  "https://images.pexels.com/photos/17323801/pexels-photo-17323801.jpeg";
 
 export default function LetsCreate() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -31,7 +32,11 @@ export default function LetsCreate() {
   const imageScale = useTransform(smooth, [0, 0.5, 1], [1.05, 1.0, 1.05]);
 
   // Content fades in as section enters center of viewport
-  const contentOpacity = useTransform(smooth, [0.1, 0.3, 0.75, 0.9], [0, 1, 1, 0]);
+  const contentOpacity = useTransform(
+    smooth,
+    [0.1, 0.3, 0.75, 0.9],
+    [0, 1, 1, 0],
+  );
   const contentY = useTransform(smooth, [0.1, 0.3], ["24px", "0px"]);
 
   // Overlay lightens slightly at peak
@@ -45,15 +50,9 @@ export default function LetsCreate() {
       style={{ height: "150vh" }}
     >
       {/* Sticky container — this is the "window" that stays on screen */}
-      <div
-        className="sticky top-[12vh] w-full"
-        style={{ height: "70vh" }}
-      >
+      <div className="sticky top-[12vh] w-full" style={{ height: "70vh" }}>
         {/* The window frame — clips everything inside */}
-        <div
-          ref={windowRef}
-          className="relative w-full h-full overflow-hidden"
-        >
+        <div ref={windowRef} className="relative w-full h-full overflow-hidden">
           {/*
             Image container — full viewport height, positioned so the
             visible slice through the window matches scroll position.
@@ -69,7 +68,9 @@ export default function LetsCreate() {
               scale: imageScale,
             }}
           >
-            <img
+            <Image
+              height={1080}
+              width={1920}
               src={IMAGE_URL}
               alt="Let's Create Meaning Together"
               className="w-full h-full object-cover"

@@ -28,7 +28,7 @@ const services: Service[] = [
     description:
       "We help you build successful products by understanding your market and users.",
     image:
-      "https://i.pinimg.com/736x/6d/54/75/6d54759dc968dcb9c961481b6253fd7e.jpg", // Replace with your image paths
+      "https://images.pexels.com/photos/20684843/pexels-photo-20684843.jpeg", // Replace with your image paths
   },
   {
     id: "02",
@@ -37,7 +37,7 @@ const services: Service[] = [
     description:
       "We help you build successful products by understanding your market and users.",
     image:
-      "https://i.pinimg.com/1200x/2f/06/60/2f066025445ff8455d9bda820e7c28c9.jpg",
+      "https://images.pexels.com/photos/7661410/pexels-photo-7661410.jpeg",
   },
   {
     id: "03",
@@ -46,7 +46,7 @@ const services: Service[] = [
     description:
       "We help you build successful products by understanding your market and users.",
     image:
-      "https://i.pinimg.com/736x/1d/9c/48/1d9c4826925892f6829cc3945b9f8b41.jpg",
+      "https://images.pexels.com/photos/6803543/pexels-photo-6803543.jpeg",
   },
   {
     id: "04",
@@ -55,7 +55,7 @@ const services: Service[] = [
     description:
       "We help you build successful products by understanding your market and users.",
     image:
-      "https://i.pinimg.com/736x/6b/56/11/6b5611a98cd8787de790ec9dfacc54bc.jpg",
+      "https://images.pexels.com/photos/7504746/pexels-photo-7504746.jpeg",
   },
   {
     id: "05",
@@ -64,7 +64,7 @@ const services: Service[] = [
     description:
       "We help you build successful products by understanding your market and users.",
     image:
-      "https://i.pinimg.com/736x/96/e2/a9/96e2a9925a2f2e68967b20bc77e73878.jpg",
+      "https://images.pexels.com/photos/9832718/pexels-photo-9832718.jpeg",
   },
 ];
 

@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Parallax from "../../shared/parallax";
 import { ScrollAnimatedText } from "@/components/shared/ScrollAnimatedText";
 import TitleSection from "@/components/element/TitleSection";
+import Link from "next/link";
 
 interface Project {
   id: string;
@@ -21,32 +22,29 @@ const projects: Project[] = [
     id: "01",
     title: "Nebula",
     description: "UI/UX & product design for digital platforms",
-    image:
-      "https://i.pinimg.com/736x/6d/54/75/6d54759dc968dcb9c961481b6253fd7e.jpg",
+    image: "https://images.pexels.com/photos/374560/pexels-photo-374560.jpeg",
     tags: ["Branding", "Web Design", "Web Development"],
   },
   {
     id: "02",
     title: "Arcform",
     description: "Industrial design meets digital craftsmanship",
-    image:
-      "https://i.pinimg.com/1200x/2f/06/60/2f066025445ff8455d9bda820e7c28c9.jpg",
-    tags: ["3D Animation", "Branding"],
+    image: "https://images.pexels.com/photos/7661492/pexels-photo-7661492.jpeg",
+    tags: ["Promotion", "Branding"],
   },
   {
     id: "03",
     title: "Luminary",
     description: "Brand identity & motion for luxury fashion",
     image:
-      "https://i.pinimg.com/736x/1d/9c/48/1d9c4826925892f6829cc3945b9f8b41.jpg",
+      "https://i.pinimg.com/736x/6d/54/75/6d54759dc968dcb9c961481b6253fd7e.jpg",
     tags: ["UI/UX Design", "Development"],
   },
   {
     id: "04",
     title: "Voidscape",
     description: "Immersive 3D experience for the metaverse",
-    image:
-      "https://i.pinimg.com/736x/6b/56/11/6b5611a98cd8787de790ec9dfacc54bc.jpg",
+    image: "https://images.pexels.com/photos/7504746/pexels-photo-7504746.jpeg",
     tags: ["3D Animation", "Web Design"],
   },
 ];
@@ -91,9 +89,7 @@ export default function SelectedWorksSection() {
             className="max-w-lg"
           >
             {/* Heading */}
-            <ScrollAnimatedText
-              title="Selected work we're proud of"
-            />
+            <ScrollAnimatedText title="Selected work we're proud of" />
 
             {/* Subtitle */}
             <motion.p
@@ -123,12 +119,14 @@ export default function SelectedWorksSection() {
                 delay: 0.25,
               }}
             >
-              <button className="group inline-flex items-center gap-3 bg-neutral-950 text-white text-sm font-medium pl-6 pr-2 py-2 rounded-full transition-all duration-300 hover:bg-orange-600">
-                View Latest Projects
-                <span className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors duration-300">
-                  <ArrowRight className="w-4 h-4" />
-                </span>
-              </button>
+              <Link href={"/projects"}>
+                <button className="group inline-flex items-center gap-3 bg-neutral-950 text-white text-sm font-medium pl-6 pr-2 py-2 rounded-full transition-all duration-300 hover:bg-orange-600">
+                  View Latest Projects
+                  <span className="w-8 h-8 rounded-full bg-white/10 group-hover:bg-white/20 flex items-center justify-center transition-colors duration-300">
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </button>
+              </Link>
             </motion.div>
 
             {/* Project counter */}
@@ -184,25 +182,22 @@ interface ProjectCardProps {
 function ProjectCard({ project, index }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Track this card's scroll position relative to the viewport
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    // 0 = card bottom hits viewport bottom  |  1 = card top hits viewport top
     offset: ["start end", "end start"],
   });
 
-  // Peak when the card centre aligns with viewport centre (progress ≈ 0.5)
-  // Collapsed height at edges → expanded height at centre
   const imageHeight = useTransform(
     scrollYProgress,
     [0, 0.3, 0.5, 0.7, 1],
     ["270px", "440px", "580px", "440px", "270px"],
   );
 
-  // Slight scale-up at peak for extra depth
   const imageScale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.04, 1]);
 
-  // Reveal the card itself on enter
+  const hasImage =
+    typeof project.image === "string" && project.image.trim().length > 0;
+
   return (
     <motion.div
       ref={cardRef}
@@ -214,65 +209,78 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         delay: index * 0.05,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="group relative rounded-2xl overflow-hidden border cursor-pointer"
+      className="group relative cursor-pointer overflow-hidden rounded-2xl border"
     >
-      {/* ── Image wrapper: height driven by scroll ── */}
       <motion.div
-        className="relative w-full overflow-hidden"
+        className="relative w-full overflow-hidden bg-neutral-100"
         style={{ height: imageHeight }}
       >
-        {/* Inner image: parallax translate + scroll scale */}
-        <Parallax
-          className="absolute inset-0 w-full h-full"
-          contentClassName="w-full h-full"
-          effect="translate"
-          axis="y"
-          range={[-20, 20]}
-          smooth
-        >
-          <motion.div
-            className="relative w-full h-full"
-            style={{ scale: imageScale }}
+        {hasImage ? (
+          <Parallax
+            className="absolute inset-0 h-full w-full"
+            contentClassName="h-full w-full"
+            effect="translate"
+            axis="y"
+            range={[-20, 20]}
+            smooth
           >
-            <Image
-              src={project.image}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-              priority={index === 0}
-            />
-          </motion.div>
-        </Parallax>
+            <motion.div
+              className="relative h-full w-full"
+              style={{ scale: imageScale }}
+            >
+              {project.image?.trim() ? (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  priority={index === 0}
+                />
+              ) : null}
+            </motion.div>
+          </Parallax>
+        ) : (
+          <div className="flex h-full w-full items-center justify-center px-6 text-center">
+            <div>
+              <p className="text-lg font-semibold text-neutral-900">
+                {project.title}
+              </p>
+              <p className="mt-2 text-sm text-neutral-500">
+                Preview image coming soon
+              </p>
+            </div>
+          </div>
+        )}
 
-        {/* Vignette overlay — lightens as card centres */}
-        <motion.div
-          className="absolute inset-0 bg-black pointer-events-none"
-          style={{
-            opacity: useTransform(
-              scrollYProgress,
-              [0, 0.5, 1],
-              [0.28, 0, 0.28],
-            ),
-          }}
-        />
+        {hasImage && (
+          <motion.div
+            className="pointer-events-none absolute inset-0 bg-black"
+            style={{
+              opacity: useTransform(
+                scrollYProgress,
+                [0, 0.5, 1],
+                [0.28, 0, 0.28],
+              ),
+            }}
+          />
+        )}
       </motion.div>
 
-      {/* Card footer */}
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 px-5 py-5 md:px-6 md:py-5">
+      <div className="flex flex-col gap-3 px-5 py-5 sm:flex-row sm:items-start sm:justify-between md:px-6 md:py-5">
         <div>
-          <h3 className="text-lg md:text-xl font-bold text-neutral-950 leading-tight">
+          <h3 className="text-lg font-bold leading-tight text-neutral-950 md:text-xl">
             {project.title}
           </h3>
-          <p className="text-xs md:text-sm text-neutral-500 mt-0.5 leading-snug">
+          <p className="mt-0.5 text-xs leading-snug text-neutral-500 md:text-sm">
             {project.description}
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-1.5 sm:justify-end sm:max-w-[55%]">
+        <div className="flex flex-wrap gap-1.5 sm:max-w-[55%] sm:justify-end">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[10px] md:text-xs font-medium tracking-wide uppercase px-3 py-1 rounded-full border border-neutral-300 text-neutral-600 bg-white/70 whitespace-nowrap"
+              className="whitespace-nowrap rounded-full border border-neutral-300 bg-white/70 px-3 py-1 text-[10px] font-medium uppercase tracking-wide text-neutral-600 md:text-xs"
             >
               {tag}
             </span>
@@ -280,14 +288,13 @@ function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* Arrow reveal on hover */}
       <motion.div
-        className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white shadow-md flex items-center justify-center"
+        className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white shadow-md"
         initial={{ opacity: 0, scale: 0.7 }}
         whileHover={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.25 }}
       >
-        <ArrowRight className="w-4 h-4 text-neutral-950" />
+        <ArrowRight className="h-4 w-4 text-neutral-950" />
       </motion.div>
     </motion.div>
   );
