@@ -49,7 +49,7 @@ export const NAV_LINKS = [
   },
   {
     label: "Case Study",
-    href: "/case-study",
+    href: "/case-studies",
     hasDropdown: false,
   },
   {
@@ -94,6 +94,7 @@ export const MOBILE_NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Case Study", href: "/case-studies" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/aboutcontact" },
 ];

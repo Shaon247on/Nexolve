@@ -21,7 +21,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       className="group"
     >
       <Link href={project.href} className="block">
-        <div className="rounded-[22px] border border-black/8 bg-[#e7e7e7] p-2 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-transform duration-500 group-hover:-translate-y-1">
+        <div className="rounded-[22px] border border-black/8  p-2 shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-transform duration-500 group-hover:-translate-y-1">
           <div className="relative overflow-hidden rounded-[18px]">
             <div
               className={[

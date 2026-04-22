@@ -14,6 +14,7 @@ export type BlogDetailSection = {
 };
 
 export type BlogDetail = {
+  id: number;
   slug: string;
   breadcrumb: string;
   authorRole?: string;
@@ -36,6 +37,7 @@ export type BlogDetailPageData = BlogPost & BlogDetail;
 
 export const blogDetails: BlogDetail[] = [
   {
+    id: 1,
     slug: "designing-digital-experiences",
     breadcrumb: "Blog > The World is Changing",
     publishedAgo: "25 minutes ago",
@@ -83,16 +85,17 @@ export const blogDetails: BlogDetail[] = [
     },
     nextPost: {
       slug: "from-concept-to-launch",
-      title: "From Idea to Experience: Translating Vision into Digital Products",
+      title:
+        "From Idea to Experience: Translating Vision into Digital Products",
     },
   },
-
   {
+    id: 2,
     slug: "from-concept-to-launch",
     breadcrumb: "Blog > Product Strategy",
     publishedAgo: "2 hours ago",
     heroImage:
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?q=80&w=1600&auto=format&fit=crop",
     shareLabel: "Share this article",
     sections: [
       {
@@ -103,9 +106,9 @@ export const blogDetails: BlogDetail[] = [
       {
         type: "two-image",
         leftImage:
-          "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1200&auto=format&fit=crop",
         rightImage:
-          "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop",
       },
       {
         type: "paragraph",
@@ -115,8 +118,8 @@ export const blogDetails: BlogDetail[] = [
       {
         type: "large-image",
         image:
-          "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop",
-        imageCaption: "Image by AI Studio",
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
+        imageCaption: "Visualizing the roadmap from data to delivery.",
       },
       {
         type: "two-column",
@@ -138,13 +141,13 @@ export const blogDetails: BlogDetail[] = [
       title: "Creating Impactful Interfaces Through Thoughtful Design Systems",
     },
   },
-
   {
+    id: 3,
     slug: "impactful-interfaces-design-systems",
     breadcrumb: "Blog > UI Systems",
     publishedAgo: "1 day ago",
     heroImage:
-      "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1600&auto=format&fit=crop",
     shareLabel: "Share this article",
     sections: [
       {
@@ -155,9 +158,9 @@ export const blogDetails: BlogDetail[] = [
       {
         type: "two-image",
         leftImage:
-          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200&auto=format&fit=crop",
         rightImage:
-          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1545235617-9465d2a55698?q=80&w=1200&auto=format&fit=crop",
       },
       {
         type: "paragraph",
@@ -167,8 +170,9 @@ export const blogDetails: BlogDetail[] = [
       {
         type: "large-image",
         image:
-          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1600&auto=format&fit=crop",
-        imageCaption: "Image by AI Studio",
+          "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1600&auto=format&fit=crop",
+        imageCaption:
+          "A unified library of components ensures seamless scalability.",
       },
       {
         type: "two-column",

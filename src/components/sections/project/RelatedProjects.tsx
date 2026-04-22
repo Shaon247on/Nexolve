@@ -9,7 +9,7 @@ export default function RelatedProjects({ projects }: RelatedProjectsProps) {
   if (!projects.length) return null;
 
   return (
-    <section className="bg-[#e7e7e7] py-14 md:py-20">
+    <section className=" py-14 md:py-20">
       <div className="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
         <div className="mb-8 flex items-center justify-between">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-black/60">

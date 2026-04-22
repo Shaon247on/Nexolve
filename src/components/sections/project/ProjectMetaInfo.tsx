@@ -26,7 +26,7 @@ export default function ProjectMetaInfo({ project }: ProjectMetaInfoProps) {
         </div>
 
         <div>
-          <div className="bg-[#ececec]rounded-[20px] bg-transparent">
+          <div className="rounded-[20px] bg-transparent">
             <div className="space-y-5">
               <div>
                 <p className="text-sm font-semibold text-black">Introduction</p>
