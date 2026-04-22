@@ -19,7 +19,7 @@ function ParagraphSection({ content }: { content?: string }) {
     .filter(Boolean);
 
   return (
-    <div className="space-y-6 text-[15px] leading-[1.5] text-[#2f2f2f] sm:text-base">
+    <div className="space-y-6 text-[15px] leading-normal text-[#2f2f2f] sm:text-base">
       {paragraphs.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
@@ -43,7 +43,7 @@ export default function BlogDetailsContent({
             <p className="text-xs text-[#7c7c7c] sm:text-sm">{blog.breadcrumb}</p>
           ) : null}
 
-          <h1 className="mt-3 max-w-[980px] text-[38px] font-semibold leading-[0.95] tracking-[-0.06em] text-[#1d1d1d] sm:text-[54px] lg:text-[72px]">
+          <h1 className="mt-3 max-w-245 text-[38px] font-semibold leading-[0.95] tracking-[-0.06em] text-[#1d1d1d] sm:text-[54px] lg:text-[72px]">
             {blog.title}
           </h1>
 
@@ -80,7 +80,7 @@ export default function BlogDetailsContent({
 
           {blog.heroImage ? (
             <div className="mt-8">
-              <div className="relative aspect-[16/10] overflow-hidden bg-neutral-200">
+              <div className="relative aspect-16/10 overflow-hidden bg-neutral-200">
                 <Image
                   src={blog.heroImage}
                   alt={blog.title}
@@ -133,7 +133,7 @@ export default function BlogDetailsContent({
                 if (section.type === "large-image" && section.image) {
                   return (
                     <div key={index}>
-                      <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
+                      <div className="relative aspect-video overflow-hidden bg-neutral-200">
                         <Image
                           src={section.image}
                           alt={`${blog.title} large visual`}
@@ -166,7 +166,7 @@ export default function BlogDetailsContent({
                         ) : null}
 
                         {section.leftText ? (
-                          <p className="mt-3 text-[15px] leading-[1.5] text-[#2f2f2f] sm:text-base">
+                          <p className="mt-3 text-[15px] leading-normal text-[#2f2f2f] sm:text-base">
                             {section.leftText}
                           </p>
                         ) : null}
@@ -180,7 +180,7 @@ export default function BlogDetailsContent({
                         ) : null}
 
                         {section.rightText ? (
-                          <p className="mt-3 text-[15px] leading-[1.5] text-[#2f2f2f] sm:text-base">
+                          <p className="mt-3 text-[15px] leading-normal text-[#2f2f2f] sm:text-base">
                             {section.rightText}
                           </p>
                         ) : null}
@@ -249,7 +249,7 @@ export default function BlogDetailsContent({
 
         {!!relatedBlogs.length && (
           <div className="mt-20 border-t border-[#e5e5e5] pt-10">
-            <div className="mx-auto max-w-[1560px]">
+            <div className="mx-auto max-w-390">
               <div className="mb-8 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#2b2b2b]">
                 <span>Latest News</span>
               </div>

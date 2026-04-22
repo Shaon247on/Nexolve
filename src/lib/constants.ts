@@ -82,7 +82,7 @@ export const NAV_LINKS = [
           heading: "More",
           items: [
             { label: "FAQ", href: "/about/faq" },
-            { label: "Contact Us", href: "/contact" },
+            { label: "Contact Us", href: "/about/contact" },
           ],
         },
       ],
@@ -95,7 +95,7 @@ export const MOBILE_NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/aboutcontact" },
 ];
 
 export const SOCIAL_LINKS = [
