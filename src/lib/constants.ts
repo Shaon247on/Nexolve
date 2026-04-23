@@ -16,14 +16,14 @@ export const NAV_LINKS = [
     hasDropdown: true,
     dropdown: {
       columns: [
-        {
-          heading: "Strategy",
-          items: [
-            { label: "Brand Strategy", href: "/services/brand-strategy" },
-            { label: "Market Research", href: "/services/market-research" },
-            { label: "Growth Consulting", href: "/services/growth" },
-          ],
-        },
+        // {
+        //   heading: "Strategy",
+        //   items: [
+        //     { label: "Brand Strategy", href: "/services/brand-strategy" },
+        //     { label: "Market Research", href: "/services/market-research" },
+        //     { label: "Growth Consulting", href: "/services/growth" },
+        //   ],
+        // },
         {
           heading: "Design",
           items: [
@@ -31,8 +31,8 @@ export const NAV_LINKS = [
               label: "UI/UX Design",
               href: "/services/ui-ux",
             },
-            { label: "Motion Graphics", href: "/services/motion" },
-            { label: "Visual Identity", href: "/services/identity" },
+            // { label: "Motion Graphics", href: "/services/motion" },
+            { label: "Product Design", href: "/services/product-design" },
           ],
         },
         {
@@ -107,8 +107,8 @@ export const SOCIAL_LINKS = [
 ];
 
 export const HERO_SERVICES = [
-  { label: "Brand Strategy", href: "/services/brand-strategy" },
-  { label: "UX & Web Design", href: "/services/design" },
-  { label: "Motion & Film", href: "/services/motion" },
-  { label: "Development", href: "/services/web" },
+  { label: "Web Development", href: "/services/web" },
+  { label: "UX & Web Design", href: "/services/ui-ux" },
+  { label: "Project Design", href: "/services/project-design" },
+  { label: "App Development", href: "/services/app" },
 ];

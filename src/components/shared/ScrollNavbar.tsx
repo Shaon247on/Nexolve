@@ -200,7 +200,7 @@ export default function ScrollNavbar() {
                               duration: 0.25,
                               ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="absolute top-full left-0 mt-3 bg-white/90 backdrop-blur-xl shadow-2xl shadow-black/10 border border-slate-100/80 p-6 min-w-130 overflow-visible origin-top"
+                            className="absolute top-full left-0 mt-3 bg-white backdrop-blur-xl shadow-2xl shadow-black/10 border border-slate-100/80 p-6 min-w-130 overflow-visible origin-top"
                             onMouseEnter={() => setActiveDropdown(link.label)}
                           >
                             <div className="flex gap-8">

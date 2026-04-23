@@ -4,7 +4,10 @@ export type BlogCategory =
   | "App Development"
   | "Business Strategy"
   | "Digital Marketing"
-  | "Photography";
+  | "Photography"
+  | "Generative AI"
+  | "AI Production"
+  | "Edge Computing";
 
 export interface BlogPost {
   id: number;
@@ -24,6 +27,9 @@ export const blogCategories: BlogCategory[] = [
   "Business Strategy",
   "Digital Marketing",
   "Photography",
+  "Generative AI",
+  "AI Production",
+  "Edge Computing",
 ];
 
 export const blogs: BlogPost[] = [
@@ -129,7 +135,8 @@ export const blogs: BlogPost[] = [
   },
   {
     id: 11,
-    title: "Building Conversion-Focused Landing Pages With Strong Information Flow",
+    title:
+      "Building Conversion-Focused Landing Pages With Strong Information Flow",
     author: "Isabella",
     date: "August 13, 2026",
     category: "Web Development",
@@ -226,5 +233,37 @@ export const blogs: BlogPost[] = [
     image:
       "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1400&auto=format&fit=crop",
     slug: "campaign-landing-page-systems",
+  },
+  {
+    id: 21,
+    title: "Lessons Learned from Large-Scale LLM",
+    author: "Olivia",
+    date: "July 3, 2026",
+    category: "Generative AI",
+    image:
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1400&auto=format&fit=crop",
+    slug: "lessons-learned-from-large-scale-llm",
+  },
+  {
+    id: 22,
+    title:
+      "Beyond the Accuracy Score: Why Scalability is the True Metric of Production AI",
+    author: "Olivia",
+    date: "July 3, 2026",
+    category: "AI Production",
+    image:
+      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop",
+    slug: "beyond-the-accuracy-score",
+  },
+  {
+    id: 23,
+    title:
+      "Optimizing Real-Time Detection: Strategies for Reducing Latency in Edge Computing",
+    author: "Lucas",
+    date: "July 17, 2026",
+    category: "Edge Computing",
+    image:
+      "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1400&auto=format&fit=crop",
+    slug: "optimizing-real-time-detection",
   },
 ];

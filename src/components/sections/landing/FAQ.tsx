@@ -79,7 +79,7 @@ export default function FAQ() {
       ref={sectionRef}
       className="w-full px-6 md:px-12 lg:px-20 py-24 bg-white"
     >
-      <div className="max-w-[1280px] mx-auto">
+      <div className="max-w-420 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           {/* ── Left column ── */}
           <motion.div
@@ -137,7 +137,7 @@ export default function FAQ() {
 
               <div className="flex items-center gap-2 mt-3">
                 <Button variant={"default"} className=" px-8 py-6" >
-                  <Link href="#contact" className="flex items-center gap-1 justify-between">
+                  <Link href="/about/contact" className="flex items-center gap-1 justify-between">
                     Contact Us
                     <ArrowRight />
                   </Link>

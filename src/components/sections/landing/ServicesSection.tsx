@@ -11,63 +11,63 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import TitleSection from "@/components/element/TitleSection";
 import { ScrollAnimatedText } from "@/components/shared/ScrollAnimatedText";
-
+import Link from "next/link";
 interface Service {
   id: string;
   number: string;
   title: string;
   description?: string;
   image: string;
+  href: string;
 }
 
 const services: Service[] = [
   {
     id: "01",
     number: "[01]",
-    title: "UI/UX Design",
+    title: "Product Design",
     description:
-      "We help you build successful products by understanding your market and users.",
-    image:
-      "https://images.pexels.com/photos/20684843/pexels-photo-20684843.jpeg", // Replace with your image paths
+      "We design digital products by aligning user needs, business goals, and scalable experience systems from concept to handoff.",
+    image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
+    href: "/services/product-design",
   },
   {
     id: "02",
     number: "[02]",
-    title: "Branding",
+    title: "UI/UX Design",
     description:
-      "We help you build successful products by understanding your market and users.",
-    image:
-      "https://images.pexels.com/photos/7661410/pexels-photo-7661410.jpeg",
+      "We craft intuitive and visually refined interfaces that improve clarity, usability, and user confidence across every touchpoint.",
+    image: "https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg",
+    href: "/services/ui-ux",
   },
   {
     id: "03",
     number: "[03]",
-    title: "Development",
+    title: "Web Development",
     description:
-      "We help you build successful products by understanding your market and users.",
-    image:
-      "https://images.pexels.com/photos/6803543/pexels-photo-6803543.jpeg",
+      "We build high-performing websites and web applications with responsive architecture, strong SEO foundations, and production-ready code.",
+    image: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+    href: "/services/web",
   },
   {
     id: "04",
     number: "[04]",
-    title: "3D Animations",
+    title: "App Development",
     description:
-      "We help you build successful products by understanding your market and users.",
-    image:
-      "https://images.pexels.com/photos/7504746/pexels-photo-7504746.jpeg",
+      "We develop modern mobile applications focused on usability, performance, and scalable product growth across real user journeys.",
+    image: "https://images.pexels.com/photos/699122/pexels-photo-699122.jpeg",
+    href: "/services/app",
   },
   {
     id: "05",
     number: "[05]",
-    title: "Marketing",
+    title: "CMS Integration",
     description:
-      "We help you build successful products by understanding your market and users.",
-    image:
-      "https://images.pexels.com/photos/9832718/pexels-photo-9832718.jpeg",
+      "We integrate flexible content management systems that make publishing easier while keeping the frontend fast, structured, and scalable.",
+    image: "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg",
+    href: "/services/cms",
   },
 ];
-
 export default function SolutionsSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeService, setActiveService] = useState<string>("01");
@@ -238,85 +238,87 @@ function ServiceItem({ service, index, isActive, onHover }: ServiceItemProps) {
   const y = useTransform(scrollYProgress, [0, 0.5, 1], [20, 0, 20]);
 
   return (
-    <motion.div
-      ref={ref}
-      onMouseEnter={onHover}
-      className="relative py-8 lg:py-12 border-b border-neutral-300 last:border-b-0 cursor-pointer group"
-      style={{ opacity }}
-      initial={{ opacity: 1, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px", amount: 0.3 }}
-      transition={{
-        duration: 0.7,
-        delay: index * 0.08,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <motion.div className="flex items-start gap-4 lg:gap-8" style={{ y }}>
-        {/* Number */}
-        <motion.div
-          className="text-base lg:text-xl font-light min-w-16 lg:min-w-20 pt-2"
-          animate={{
-            color: isActive ? "#ea580c" : "#a3a3a3",
-          }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {service.number}
-        </motion.div>
-
-        {/* Content */}
-        <div className="flex-1">
-          <motion.h2
-            className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight leading-tight"
+    <Link href={service.href}>
+      <motion.div
+        ref={ref}
+        onMouseEnter={onHover}
+        className="relative py-8 lg:py-12 border-b border-neutral-300 last:border-b-0 cursor-pointer group"
+        style={{ opacity }}
+        initial={{ opacity: 1, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px", amount: 0.3 }}
+        transition={{
+          duration: 0.7,
+          delay: index * 0.08,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
+        <motion.div className="flex items-start gap-4 lg:gap-8" style={{ y }}>
+          {/* Number */}
+          <motion.div
+            className="text-base lg:text-xl font-light min-w-16 lg:min-w-20 pt-2"
             animate={{
-              color: isActive ? "#171717" : "#d4d4d4",
-              x: isActive ? 8 : 0,
+              color: isActive ? "#ea580c" : "#a3a3a3",
             }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
-            {service.title}
-          </motion.h2>
-
-          {/* Description - Shows on active */}
-          <motion.div
-            initial={{ opacity: 0, height: 0, marginTop: 0 }}
-            animate={{
-              opacity: isActive ? 1 : 0,
-              height: isActive ? "auto" : 0,
-              marginTop: isActive ? 24 : 0,
-            }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden"
-          >
-            <p className="text-base xl:text-lg text-neutral-700 max-w-2xl leading-relaxed">
-              {service.description}
-            </p>
+            {service.number}
           </motion.div>
-        </div>
 
-        {/* Arrow Icon */}
-        <motion.div
-          className="mt-2 lg:mt-4"
-          animate={{
-            x: isActive ? 8 : 0,
-            opacity: isActive ? 1 : 0,
-            rotate: isActive ? 45 : 0,
-          }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <ArrowUpRight className="w-6 h-6 lg:w-8 lg:h-8 text-orange-600" />
+          {/* Content */}
+          <div className="flex-1">
+            <motion.h2
+              className="text-4xl md:text-5xl xl:text-6xl font-bold tracking-tight leading-tight"
+              animate={{
+                color: isActive ? "#171717" : "#d4d4d4",
+                x: isActive ? 8 : 0,
+              }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
+              {service.title}
+            </motion.h2>
+
+            {/* Description - Shows on active */}
+            <motion.div
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{
+                opacity: isActive ? 1 : 0,
+                height: isActive ? "auto" : 0,
+                marginTop: isActive ? 24 : 0,
+              }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden"
+            >
+              <p className="text-base xl:text-lg text-neutral-700 max-w-2xl leading-relaxed">
+                {service.description}
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Arrow Icon */}
+          <motion.div
+            className="mt-2 lg:mt-4"
+            animate={{
+              x: isActive ? 8 : 0,
+              opacity: isActive ? 1 : 0,
+              rotate: isActive ? 45 : 0,
+            }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <ArrowUpRight className="w-6 h-6 lg:w-8 lg:h-8 text-orange-600" />
+          </motion.div>
         </motion.div>
-      </motion.div>
 
-      {/* Active Indicator Line */}
-      <motion.div
-        className="absolute left-0 bottom-0 h-[2px] bg-orange-600"
-        initial={{ width: 0 }}
-        animate={{
-          width: isActive ? "100%" : "0%",
-        }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      />
-    </motion.div>
+        {/* Active Indicator Line */}
+        <motion.div
+          className="absolute left-0 bottom-0 h-[2px] bg-orange-600"
+          initial={{ width: 0 }}
+          animate={{
+            width: isActive ? "100%" : "0%",
+          }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        />
+      </motion.div>
+    </Link>
   );
 }

@@ -20,6 +20,7 @@ import { ScrollAnimatedText } from "@/components/shared/ScrollAnimatedText";
 import TitleSection from "@/components/element/TitleSection";
 import { Button } from "@/components/ui/button";
 import CountUp from "@/components/element/CountUp";
+import Link from "next/link";
 
 function useSmoothTransform(
   value: MotionValue<number>,
@@ -306,6 +307,7 @@ export default function AboutSection() {
                 delay: 0.2,
               }}
             >
+              <Link href={"/about/team"}>
               <Button
                 size={"lg"}
                 className="h-auto gap-2.5 px-7 py-3.5 font-body text-sm font-semibold"
@@ -315,6 +317,7 @@ export default function AboutSection() {
                   <ArrowUpRight className="w-4 h-4" />
                 </span>
               </Button>
+              </Link>
             </motion.div>
           </div>
         </div>

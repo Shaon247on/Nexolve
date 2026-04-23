@@ -12,7 +12,7 @@ type Article = {
   date: string;
   category?: string;
   image: string;
-  href: string;
+  slug: string;
   featured?: boolean;
 };
 
@@ -25,7 +25,7 @@ const articles: Article[] = [
     category: "Generative AI",
     image:
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1400&auto=format&fit=crop",
-    href: "/blogs/lessons-learned-from-large-scale-llm",
+    slug: "lessons-learned-from-large-scale-llm",
     featured: true,
   },
   {
@@ -36,7 +36,7 @@ const articles: Article[] = [
     date: "July 3, 2026",
     image:
       "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop",
-    href: "/blogs/beyond-the-accuracy-score",
+    slug: "beyond-the-accuracy-score",
   },
   {
     id: "3",
@@ -46,13 +46,13 @@ const articles: Article[] = [
     date: "July 17, 2026",
     image:
       "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=1400&auto=format&fit=crop",
-    href: "/blogs/optimizing-real-time-detection",
+    slug: "optimizing-real-time-detection",
   },
 ];
 
 function FeaturedArticleCard({ article }: { article: Article }) {
   return (
-    <Link href={article.href} className="group block h-full">
+    <Link href={`/blogs/${article.slug}`} className="group block h-full">
       <motion.article
         whileHover={{ y: -4 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
@@ -91,7 +91,7 @@ function FeaturedArticleCard({ article }: { article: Article }) {
 
 function ArticleCard({ article }: { article: Article }) {
   return (
-    <Link href={article.href} className="group block">
+    <Link href={`/blogs/${article.slug}`} className="group block">
       <motion.article
         whileHover={{ y: -4 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
@@ -132,7 +132,7 @@ export default function BlogSection() {
   const sideArticles = articles.filter((article) => !article.featured);
 
   return (
-    <section className=" px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-16 xl:px-16">
+    <section className="px-4 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-16 xl:px-16">
       <div className="mx-auto max-w-[1680px]">
         <div className="flex flex-col gap-6 border-t border-[#cfd8d3] pt-2">
           <div className="flex items-start justify-between gap-6">

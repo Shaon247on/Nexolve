@@ -356,7 +356,7 @@ export default function HeroSection() {
                   size="lg"
                   className="h-auto gap-2.5 px-7 py-3.5 font-body text-sm font-semibold"
                 >
-                  <Link href="/portfolio">
+                  <Link href="/projects">
                     Explore Our Work
                     <svg
                       className="h-3.5 w-3.5 rotate-45"
@@ -387,7 +387,7 @@ export default function HeroSection() {
                     } as CSSProperties
                   }
                 >
-                  <Link href="/contact" className="flex items-center gap-3">
+                  <Link href="/about/contact" className="flex items-center gap-3">
                     Start a Project
                     <svg
                       className="h-3.5 w-3.5 rotate-45"
@@ -438,7 +438,7 @@ export default function HeroSection() {
                 className="grid grid-cols-2 gap-3"
               >
                 {[
-                  { to: 150, suffix: "+", label: "Projects Shipped" },
+                  { to: 38, suffix: "+", label: "Projects Shipped" },
                   { to: 98, suffix: "%", label: "Client Satisfaction" },
                   { to: 12, suffix: "+", label: "AI Models Deployed" },
                   { to: 40, suffix: "ms", label: "Avg. API Response" },
@@ -499,64 +499,6 @@ export default function HeroSection() {
                     </motion.span>
                   )
                 )}
-              </motion.div>
-
-              <motion.div
-                variants={slideRight}
-                whileHover={{
-                  scale: 1.025,
-                  borderColor: "rgba(80,140,255,0.32)",
-                  background: "rgba(10,24,72,0.70)",
-                }}
-                className="flex cursor-pointer items-center gap-4 rounded-xl p-4 transition-all"
-                style={{
-                  background: "rgba(8,18,55,0.52)",
-                  border: "1px solid rgba(55,105,255,0.12)",
-                  backdropFilter: "blur(14px)",
-                }}
-              >
-                <div
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
-                  style={{
-                    background: "rgba(28,65,195,0.28)",
-                    border: "1px solid rgba(80,140,255,0.18)",
-                  }}
-                >
-                  <svg
-                    className="h-5 w-5 text-blue-300"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.8}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                    />
-                  </svg>
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="mb-0.5 font-body text-sm font-semibold text-white/75">
-                    How We Work
-                  </p>
-                  <p className="font-body text-xs leading-snug text-white/32">
-                    Discovery → Architecture → Build → Launch
-                  </p>
-                </div>
-                <svg
-                  className="h-4 w-4 shrink-0 rotate-45 text-blue-400/40"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M7 17L17 7M17 7H7M17 7v10"
-                  />
-                </svg>
               </motion.div>
             </motion.div>
           </div>

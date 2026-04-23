@@ -32,62 +32,74 @@ const testimonials: Testimonial[] = [
   {
     id: "01",
     quote:
-      "The collaboration was seamless from start to finish. Their UX decisions significantly improved our product engagement.",
-    name: "Lucas Moreno",
-    role: "Product Manager",
-    location: "Barcelona, Spain",
+      "We came in needing a cleaner user journey and faster page performance. The team helped us simplify the experience without losing the depth of the product. Engagement improved within the first few weeks after launch.",
+    name: "Daniel Foster",
+    role: "Head of Product",
+    location: "Austin, Texas",
     avatar:
-      "https://i.pinimg.com/1200x/7e/a0/38/7ea038488e43e5fec504d17fedc52723.jpg",
-    company: "Architect",
-    rating: 4,
+      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop",
+    company: "Northgrid",
+    rating: 5,
   },
   {
     id: "02",
     quote:
-      "A rare combination of technical expertise and artistic vision. The final result felt premium and purposeful.",
-    name: "Hannah Lee",
+      "What stood out most was their ability to connect design decisions with business outcomes. The final product felt significantly more polished, and our internal team found the handoff process very smooth.",
+    name: "Maya Chen",
     role: "Creative Director",
-    location: "Studio Kinetic",
+    location: "Singapore",
     avatar:
-      "https://i.pinimg.com/1200x/7e/a0/38/7ea038488e43e5fec504d17fedc52723.jpg",
-    company: "Cloudly",
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&auto=format&fit=crop",
+    company: "Lunera Studio",
     rating: 5,
   },
   {
     id: "03",
     quote:
-      "They delivered not just a design, but a complete brand experience. Strategic, creative, and incredibly detail-oriented.",
-    name: "Amelia Wright",
-    role: "Head of Marketing",
-    location: "London, United Kingdom",
+      "They brought structure to a project that had too many moving parts. From wireframes to final implementation guidance, everything felt organized, thoughtful, and easy to review with stakeholders.",
+    name: "Oliver Bennett",
+    role: "Operations Lead",
+    location: "Manchester, UK",
     avatar:
-      "https://i.pinimg.com/1200x/7e/a0/38/7ea038488e43e5fec504d17fedc52723.jpg",
-    company: "Techlify",
-    rating: 5,
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&auto=format&fit=crop",
+    company: "Framewise",
+    rating: 4,
   },
   {
     id: "04",
     quote:
-      "Working with this team transformed how we think about our digital presence. Every pixel had a reason behind it.",
-    name: "James Okafor",
-    role: "CEO & Founder",
-    location: "Lagos, Nigeria",
+      "We were impressed by how quickly they understood our product and identified the weak points in the experience. The redesign gave us a more credible presence and a much stronger visual system.",
+    name: "Ava Reynolds",
+    role: "Founder",
+    location: "Toronto, Canada",
     avatar:
-      "https://i.pinimg.com/1200x/7e/a0/38/7ea038488e43e5fec504d17fedc52723.jpg",
-    company: "Stackwave",
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&auto=format&fit=crop",
+    company: "ClarityLab",
     rating: 5,
   },
   {
     id: "05",
     quote:
-      "Exceptionally professional and wildly creative. They pushed us beyond what we thought was possible for our brand.",
-    name: "Sofia Rein",
-    role: "Brand Strategist",
-    location: "Berlin, Germany",
+      "Their team balanced aesthetics and usability really well. The interface feels lighter, faster, and more intentional now. We also appreciated how clearly they communicated throughout the project.",
+    name: "Noah Martins",
+    role: "Product Marketing Manager",
+    location: "Lisbon, Portugal",
     avatar:
-      "https://i.pinimg.com/1200x/7e/a0/38/7ea038488e43e5fec504d17fedc52723.jpg",
-    company: "Moodboard",
+      "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=400&auto=format&fit=crop",
+    company: "VerityOS",
     rating: 5,
+  },
+  {
+    id: "06",
+    quote:
+      "The collaboration felt professional from day one. They challenged a few of our assumptions in a very constructive way, and the final experience is much stronger because of that.",
+    name: "Isabella Khan",
+    role: "Brand Manager",
+    location: "Dubai, UAE",
+    avatar:
+      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=400&auto=format&fit=crop",
+    company: "Auren",
+    rating: 4,
   },
 ];
 
@@ -101,8 +113,8 @@ function StarRating({ count }: { count: number }) {
         <Star
           key={i}
           className="w-4 h-4"
-          fill={i < count ? "#f97316" : "transparent"}
-          stroke={i < count ? "#f97316" : "#555"}
+          fill={i < count ? "#2563eb" : "transparent"}
+          stroke={i < count ? "#2563eb" : "#555"}
           strokeWidth={1.5}
         />
       ))}
@@ -120,11 +132,11 @@ function TestimonialCard({ item }: { item: Testimonial }) {
       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
       className="h-full"
     >
-      <div className="flex flex-col h-full p-7 rounded-2xl border border-neutral-700 bg-[#1e1e1e] select-none transition-colors duration-300 hover:border-orange-500/40">
+      <div className="flex h-full flex-col rounded-2xl border border-neutral-700 bg-[#1e1e1e] p-7 select-none transition-colors duration-300 hover:border-blue-500/40">
         {/* Top row: avatar + company pill */}
         <div className="flex items-center justify-between mb-6">
           <div className="relative">
-            <div className="w-14 h-14 rounded-full overflow-hidden ring-2 ring-orange-500/30">
+            <div className="h-14 w-14 overflow-hidden rounded-full ring-2 ring-blue-500/30">
               <Image
                 src={item.avatar}
                 alt={item.name}
@@ -134,12 +146,12 @@ function TestimonialCard({ item }: { item: Testimonial }) {
               />
             </div>
             {/* Online dot */}
-            <span className="absolute bottom-0.5 right-0.5 w-3 h-3 rounded-full bg-orange-500 ring-2 ring-[#1e1e1e]" />
+            <span className="absolute right-0.5 bottom-0.5 h-3 w-3 rounded-full bg-blue-500 ring-2 ring-[#1e1e1e]" />
           </div>
 
           {/* Company pill */}
           <div className="flex items-center gap-1.5 px-3 pt-1.5 rounded-full bg-white/5 border border-white/10">
-            <span className="w-2 h-2 rounded-full bg-orange-500" />
+            <span className="h-2 w-2 rounded-full bg-blue-500" />
             <span className="text-xs font-medium text-neutral-300 tracking-wide">
               {item.company}
             </span>
@@ -198,8 +210,8 @@ export default function TestimonialsSection() {
         style={{ opacity: bgOpacity }}
         className="pointer-events-none absolute inset-0"
       >
-        <div className="absolute -top-32 -left-32 w-125 h-125 rounded-full bg-orange-600/5 blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-100 h-100 rounded-full bg-orange-500/5 blur-[100px]" />
+        <div className="absolute -top-32 -left-32 h-125 w-125 rounded-full bg-blue-600/5 blur-[120px]" />
+        <div className="absolute right-0 bottom-0 h-100 w-100 rounded-full bg-blue-500/5 blur-[100px]" />
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -223,11 +235,11 @@ export default function TestimonialsSection() {
               className="mb-5"
             >
               <div className="w-9 h-9 relative">
-                <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-[3px]">
-                  <div className="bg-orange-600 rounded-[2px]" />
-                  <div className="bg-orange-600 rounded-[2px] translate-x-0.5" />
-                  <div className="bg-orange-600 rounded-[2px] -translate-y-0.5" />
-                  <div className="bg-orange-600 rounded-[2px]" />
+                <div className="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-0.75">
+                  <div className="bg-blue-600 rounded" />
+                  <div className="bg-blue-600 rounded translate-x-0.5" />
+                  <div className="bg-blue-600 rounded -translate-y-0.5" />
+                  <div className="bg-blue-600 rounded" />
                 </div>
               </div>
             </motion.div>
@@ -259,23 +271,23 @@ export default function TestimonialsSection() {
             whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-            className="flex-shrink-0 self-center md:self-end"
+            className="shrink-0 self-center md:self-end"
           >
             <motion.div
               animate={{ rotate: [0, 8, -6, 4, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-24 h-24 flex items-center justify-center"
+              className="relative flex h-24 w-24 items-center justify-center"
             >
               <svg
                 viewBox="0 0 100 100"
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 h-full w-full"
               >
                 <path
                   d="M50,10 C58,10 65,18 65,26 C73,22 83,26 85,34 C87,42 81,50 73,52 C79,58 79,70 71,74 C63,78 55,72 50,66 C45,72 37,78 29,74 C21,70 21,58 27,52 C19,50 13,42 15,34 C17,26 27,22 35,26 C35,18 42,10 50,10 Z"
-                  fill="#ea580c"
+                  fill="#2563eb"
                 />
               </svg>
-              <span className="relative z-10 text-center text-[9px] font-black uppercase tracking-widest text-white leading-tight">
+              <span className="relative z-10 text-center text-[9px] leading-tight font-black tracking-widest text-white uppercase">
                 Client
                 <br />
                 Stories
@@ -317,7 +329,7 @@ export default function TestimonialsSection() {
                   w-11 h-11 rounded-full
                   border border-neutral-700 bg-transparent
                   text-neutral-400
-                  hover:border-orange-500 hover:text-orange-500 hover:bg-transparent
+                  hover:border-blue-500 hover:text-blue-500 hover:bg-transparent
                   disabled:opacity-30
                   transition-colors duration-200
                 "
@@ -328,7 +340,7 @@ export default function TestimonialsSection() {
                   w-11 h-11 rounded-full
                   border border-neutral-700 bg-transparent
                   text-neutral-400
-                  hover:border-orange-500 hover:text-orange-500 hover:bg-transparent
+                  hover:border-blue-500 hover:text-blue-500 hover:bg-transparent
                   disabled:opacity-30
                   transition-colors duration-200
                 "

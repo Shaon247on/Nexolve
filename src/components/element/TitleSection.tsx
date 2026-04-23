@@ -16,22 +16,23 @@ interface TitleSectionProps {
 export default function TitleSection({
   title,
   scrollYProgress,
-  className = "text-[18vw]",
+  className = "text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[6rem] xl:text-[12rem] 2xl:text-[13rem]",
   wrapperClassName = "",
   from = 0,
   to = 0.4,
-  opacityRange = [0, 0.04],
-  topClassName = "-top-4",
+  opacityRange = [0, 0.07],
+  topClassName = "top-0",
 }: TitleSectionProps) {
   const opacity = useTransform(scrollYProgress, [from, to], opacityRange);
 
   return (
     <motion.div
-      className={`pointer-events-none absolute ${topClassName} left-0 w-full select-none overflow-hidden ${wrapperClassName}`}
+      className={`pointer-events-none absolute ${topClassName} left-0 z-0 w-full select-none ${wrapperClassName}`}
       style={{ opacity }}
+      aria-hidden="true"
     >
       <span
-        className={`whitespace-nowrap  leading-none font-black uppercase tracking-tighter ${className} text-neutral-900 `}
+        className={`block whitespace-nowrap leading-none font-black uppercase tracking-tighter text-neutral-900 ${className}`}
       >
         {title}
       </span>
