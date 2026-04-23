@@ -94,7 +94,7 @@ export default function ScrollNavbar() {
                   </div> */}
                   <div className="relative w-7 h-7 shrink-0">
                     <Image
-                      src="/fav-icon.PNG"
+                      src="/fav-icon.png"
                       alt="logo icon"
                       fill
                       className="object-contain"
