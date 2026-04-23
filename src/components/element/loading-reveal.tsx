@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const NUM_BARS = 9;
 
@@ -23,7 +24,7 @@ export default function LoadingReveal() {
 
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1800);
+    }, 2000);
 
     return () => {
       clearInterval(interval);
@@ -35,88 +36,95 @@ export default function LoadingReveal() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-99 flex items-center justify-center pointer-events-none"
+          className="fixed inset-0 z-99 pointer-events-none overflow-hidden"
           exit={{ opacity: 1 }}
         >
-          {/* Loading content */}
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center z-10"
-            exit={{ opacity: 0, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0, y: 20, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{
+              opacity: 0,
+              y: -16,
+              transition: {
+                duration: 0.28,
+                ease: [0.76, 0, 0.24, 1],
+              },
+            }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0 z-10 flex flex-col items-center justify-center"
           >
-            {/* Logo mark */}
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.9 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-10 flex flex-col items-center"
-            >
-              {/* Geometric logo */}
-              <div className="relative w-14 h-14 mb-6">
-                <motion.div
-                  className="absolute inset-0 bg-blue-600 rounded-lg"
-                  animate={{ rotate: [0, 45, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            <div className="flex h-20 items-center justify-center">
+              <motion.div
+                className="relative h-14 w-14 shrink-0 origin-center"
+                initial={{ rotate: 0 }}
+                animate={{ rotate: 360 }}
+                transition={{
+                  duration: 1.8,
+                  ease: "easeInOut",
+                }}
+                style={{ willChange: "transform" }}
+              >
+                <Image
+                  src="/fav-icon.png"
+                  alt="Nexus Logo"
+                  fill
+                  className="object-contain"
+                  priority
                 />
-                <motion.div
-                  className="absolute inset-2 bg-white rounded"
-                  animate={{ rotate: [0, -45, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                />
-                <motion.div
-                  className="absolute inset-4 bg-blue-600 rounded-sm"
-                />
-              </div>
+              </motion.div>
+            </div>
+
+            <div className="flex min-h-[64px] flex-col items-center justify-start">
               <motion.span
-                className="font-display text-white text-3xl font-bold tracking-[0.15em] uppercase"
-                initial={{ opacity: 0, letterSpacing: "0.4em" }}
-                animate={{ opacity: 1, letterSpacing: "0.15em" }}
-                transition={{ delay: 0.3, duration: 0.8 }}
+                className="font-display text-3xl font-bold leading-none tracking-[0.15em] text-white uppercase"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
               >
                 Nexus
               </motion.span>
+
               <motion.span
-                className="font-body text-blue-200/60 text-xs tracking-[0.3em] uppercase mt-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.6 }}
+                className="font-body mt-2 text-xs leading-none tracking-[0.3em] text-blue-200/60 uppercase"
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55, duration: 0.5, ease: "easeOut" }}
               >
                 Design & Strategy
               </motion.span>
-            </motion.div>
+            </div>
 
-            {/* Progress bar */}
             <motion.div
-              className="w-48 h-px bg-white/10 relative overflow-hidden"
+              className="relative mt-6 h-px w-48 overflow-hidden bg-white/10"
               initial={{ opacity: 0, scaleX: 0.5 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.4, duration: 0.4 }}
+              transition={{ delay: 0.45, duration: 0.4 }}
             >
               <motion.div
                 className="absolute inset-y-0 left-0 bg-blue-400"
                 style={{ width: `${Math.min(progress, 100)}%` }}
-                transition={{ ease: "easeOut" }}
+                transition={{ ease: "easeOut", duration: 0.18 }}
               />
             </motion.div>
+
             <motion.span
-              className="font-body text-white/30 text-xs tracking-widest mt-3"
+              className="font-body mt-3 text-xs tracking-widest text-white/30"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.55 }}
             >
               {Math.min(Math.round(progress), 100)}%
             </motion.span>
           </motion.div>
 
-          {/* Bars overlay */}
           <div className="absolute inset-0 flex">
             {Array.from({ length: NUM_BARS }).map((_, i) => (
               <motion.div
                 key={i}
-                className="flex-1 h-full loading-bar"
+                className="h-full flex-1"
                 style={{
-                  background: i % 2 === 0
-                    ? `rgb(10, 20, 60)`
-                    : `rgb(15, 30, 80)`,
+                  background:
+                    i % 2 === 0 ? "rgb(10, 20, 60)" : "rgb(15, 30, 80)",
                 }}
                 initial={{ y: "0%" }}
                 exit={{
